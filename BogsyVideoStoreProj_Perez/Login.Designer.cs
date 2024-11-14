@@ -34,12 +34,12 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            textBox2 = new TextBox();
+            txtpass = new TextBox();
             label4 = new Label();
             linkLabel1 = new LinkLabel();
             button1 = new Button();
-            linkLabel2 = new LinkLabel();
-            textBox3 = new TextBox();
+            signin = new LinkLabel();
+            txtusername = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -90,7 +90,7 @@
             pictureBox1.InitialImage = null;
             pictureBox1.Location = new Point(48, 167);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(52, 38);
+            pictureBox1.Size = new Size(46, 38);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -103,21 +103,21 @@
             pictureBox2.InitialImage = null;
             pictureBox2.Location = new Point(48, 269);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 38);
+            pictureBox2.Size = new Size(46, 38);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
             // 
-            // textBox2
+            // txtpass
             // 
-            textBox2.BackColor = SystemColors.ControlLight;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(100, 269);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(200, 38);
-            textBox2.TabIndex = 5;
+            txtpass.BackColor = SystemColors.ControlLight;
+            txtpass.BorderStyle = BorderStyle.None;
+            txtpass.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtpass.Location = new Point(94, 269);
+            txtpass.Multiline = true;
+            txtpass.Name = "txtpass";
+            txtpass.Size = new Size(200, 38);
+            txtpass.TabIndex = 5;
             // 
             // label4
             // 
@@ -156,30 +156,32 @@
             button1.TabIndex = 9;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // linkLabel2
+            // signin
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkLabel2.LinkColor = Color.FromArgb(12, 82, 128);
-            linkLabel2.Location = new Point(132, 502);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(61, 20);
-            linkLabel2.TabIndex = 10;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Sign Up";
+            signin.AutoSize = true;
+            signin.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            signin.LinkBehavior = LinkBehavior.NeverUnderline;
+            signin.LinkColor = Color.FromArgb(12, 82, 128);
+            signin.Location = new Point(132, 502);
+            signin.Name = "signin";
+            signin.Size = new Size(61, 20);
+            signin.TabIndex = 10;
+            signin.TabStop = true;
+            signin.Text = "Sign Up";
+            signin.LinkClicked += linkLabel2_LinkClicked;
             // 
-            // textBox3
+            // txtusername
             // 
-            textBox3.BackColor = SystemColors.ControlLight;
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(100, 167);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(200, 38);
-            textBox3.TabIndex = 11;
+            txtusername.BackColor = SystemColors.ControlLight;
+            txtusername.BorderStyle = BorderStyle.None;
+            txtusername.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtusername.Location = new Point(94, 167);
+            txtusername.Multiline = true;
+            txtusername.Name = "txtusername";
+            txtusername.Size = new Size(200, 38);
+            txtusername.TabIndex = 11;
             // 
             // Login
             // 
@@ -187,13 +189,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(336, 570);
-            Controls.Add(textBox3);
-            Controls.Add(linkLabel2);
+            Controls.Add(txtusername);
+            Controls.Add(signin);
             Controls.Add(button1);
             Controls.Add(linkLabel1);
             Controls.Add(label4);
             Controls.Add(pictureBox2);
-            Controls.Add(textBox2);
+            Controls.Add(txtpass);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -216,11 +218,11 @@
         private Label label3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private TextBox textBox2;
+        private TextBox txtpass;
         private Label label4;
         private LinkLabel linkLabel1;
         private Button button1;
-        private LinkLabel linkLabel2;
-        private TextBox textBox3;
+        private LinkLabel signin;
+        private TextBox txtusername;
     }
 }

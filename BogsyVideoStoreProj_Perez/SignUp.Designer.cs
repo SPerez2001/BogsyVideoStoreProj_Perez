@@ -33,9 +33,9 @@
             txtusername = new TextBox();
             label2 = new Label();
             txtemail = new TextBox();
-            textBox2 = new TextBox();
+            txtpass = new TextBox();
             label5 = new Label();
-            linkLabel2 = new LinkLabel();
+            backlogin = new LinkLabel();
             label3 = new Label();
             btnsignup = new Button();
             SuspendLayout();
@@ -100,16 +100,16 @@
             txtemail.Size = new Size(243, 28);
             txtemail.TabIndex = 15;
             // 
-            // textBox2
+            // txtpass
             // 
-            textBox2.BackColor = SystemColors.ControlLight;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(39, 366);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(243, 28);
-            textBox2.TabIndex = 17;
+            txtpass.BackColor = SystemColors.ControlLight;
+            txtpass.BorderStyle = BorderStyle.None;
+            txtpass.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtpass.Location = new Point(39, 366);
+            txtpass.Multiline = true;
+            txtpass.Name = "txtpass";
+            txtpass.Size = new Size(243, 28);
+            txtpass.TabIndex = 17;
             // 
             // label5
             // 
@@ -122,18 +122,19 @@
             label5.TabIndex = 16;
             label5.Text = "PASSWORD";
             // 
-            // linkLabel2
+            // backlogin
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel2.LinkBehavior = LinkBehavior.NeverUnderline;
-            linkLabel2.LinkColor = Color.FromArgb(12, 82, 128);
-            linkLabel2.Location = new Point(124, 547);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(54, 20);
-            linkLabel2.TabIndex = 19;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Sign In";
+            backlogin.AutoSize = true;
+            backlogin.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            backlogin.LinkBehavior = LinkBehavior.NeverUnderline;
+            backlogin.LinkColor = Color.FromArgb(12, 82, 128);
+            backlogin.Location = new Point(124, 547);
+            backlogin.Name = "backlogin";
+            backlogin.Size = new Size(54, 20);
+            backlogin.TabIndex = 19;
+            backlogin.TabStop = true;
+            backlogin.Text = "Sign In";
+            backlogin.LinkClicked += linkLabel2_LinkClicked;
             // 
             // label3
             // 
@@ -168,8 +169,8 @@
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(319, 596);
             Controls.Add(btnsignup);
-            Controls.Add(linkLabel2);
-            Controls.Add(textBox2);
+            Controls.Add(backlogin);
+            Controls.Add(txtpass);
             Controls.Add(label5);
             Controls.Add(txtemail);
             Controls.Add(label3);
@@ -193,9 +194,9 @@
         private TextBox txtusername;
         private Label label2;
         private TextBox txtemail;
-        private TextBox textBox2;
+        private TextBox txtpass;
         private Label label5;
-        private LinkLabel linkLabel2;
+        private LinkLabel backlogin;
         private Label label3;
         private Button btnsignup;
     }

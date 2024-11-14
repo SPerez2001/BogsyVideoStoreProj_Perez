@@ -35,19 +35,44 @@ namespace BogsyVideoStoreProj_Perez
 
         private void btnsignup_Click(object sender, EventArgs e)
         {
-            Database con = new Database();
-            con.con.Open();
             string email = txtemail.Text;
-            string check = SignUpClass.Sign(email);
-            if (check == "")
+            string username = txtusername.Text;
+            string password = txtpass.Text;
+            string check = SignClass.Sign(email, username, password);
+            if (check == "saved")
             {
-                MessageBox.Show("ok", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Login log = new Login();
+                log.Enabled = true;
+
+                this.Hide();
+                log.ShowDialog();
+                this.Close();
             }
             else
             {
                 MessageBox.Show("There's already an Account with this email", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            con.con.Close();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login log = new Login();
+            log.Enabled = true;
+
+            this.Hide();
+            log.ShowDialog();
+            this.Close();
+            //HomePage hp = new HomePage();
+            //hp.Enabled = true;
+
+            //this.Hide();
+
+            //HomePage.instance.id2.Text = cmd1.ExecuteScalar().ToString();
+            //HomePage.instance.name2.Text = cmd2.ExecuteScalar().ToString();
+
+            //conn.Close();
+            //hp.ShowDialog(this);
+            //this.Close();
         }
     }
 }
